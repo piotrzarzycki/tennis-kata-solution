@@ -92,5 +92,19 @@ public class TennisGameTest {
         Assert.assertEquals(tennisGame.getCurrentScore(),"deuce");
     }
 
+    @Test
+    public void whenFirstPlayerHasAdvantage(){
+
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        Assert.assertEquals(tennisGame.getCurrentScore(),"A -");
+    }
+
 }
 
