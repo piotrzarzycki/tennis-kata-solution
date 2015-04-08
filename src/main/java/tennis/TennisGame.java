@@ -6,9 +6,10 @@ package tennis;
 public class TennisGame {
 
     private String playerAScore = "0";
+    private String playerBScore = "0";
 
     public String getCurrentScore(){
-        return playerAScore+" 0";
+        return playerAScore + " " + playerBScore;
     }
 
     public void playerAScores(){
@@ -16,6 +17,6 @@ public class TennisGame {
     }
 
     public void playerBScores(){
-
+        playerBScore = "15";
     }
 }
