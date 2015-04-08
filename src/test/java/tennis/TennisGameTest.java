@@ -150,5 +150,25 @@ public class TennisGameTest {
 
     }
 
+    @Test
+    public void whenSecondPlayerWonButWithMoreScores(){
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerBScores();
+        tennisGame.playerAScores();
+        tennisGame.playerBScores();
+        tennisGame.playerAScores();
+        tennisGame.playerBScores();
+        tennisGame.playerAScores();
+        tennisGame.playerBScores();
+        tennisGame.playerAScores();
+        tennisGame.playerBScores();
+        tennisGame.playerAScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        Assert.assertEquals(tennisGame.getCurrentScore(),"- W");
+
+    }
+
+
 }
 
