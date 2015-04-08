@@ -19,6 +19,9 @@ public class TennisGame {
     }
 
     public String getCurrentScore(){
+        if (playerAScore>=3&&playerAScore==playerBScore){
+            return "deuce";
+        }
         return pointMap.get(playerAScore) + " " + pointMap.get(playerBScore);
     }
 
