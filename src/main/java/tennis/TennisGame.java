@@ -14,6 +14,7 @@ public class TennisGame {
     private Map<Integer, String> pointMap = new HashMap<Integer,String>();
     private final static String delimiter = " ";
     private final static String Advantage = "A";
+    private final static String Won = "W";
     private final static String Nothing = "-";
 
     public TennisGame(){
@@ -24,6 +25,7 @@ public class TennisGame {
         diffMap.put(0, "deuce");
         diffMap.put(1, Advantage + delimiter + Nothing);
         diffMap.put(-1, Nothing + delimiter + Advantage);
+        diffMap.put(2, Won + delimiter + Nothing);
     }
 
     public String getCurrentScore(){

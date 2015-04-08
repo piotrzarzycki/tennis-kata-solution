@@ -120,5 +120,20 @@ public class TennisGameTest {
 
     }
 
+    @Test
+    public void whenFirstPlayerWon(){
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        Assert.assertEquals(tennisGame.getCurrentScore(),"W -");
+
+    }
+
 }
 
