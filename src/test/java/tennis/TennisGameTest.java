@@ -8,14 +8,23 @@ public class TennisGameTest {
     public void whenNoOnePlayerScoresCurrentScoreIs00(){
 
         TennisGame tennisGame = new TennisGame();
-        Assert.assertEquals(tennisGame.getCurrentSocre(),"0 0");
+        Assert.assertEquals(tennisGame.getCurrentScore(),"0 0");
     }
 
     @Test
-    public void whenFirstPlayerSoresCurrentScore15_0(){
+    public void whenFirstPlayerScoresCurrentScore15_0(){
 
         TennisGame tennisGame = new TennisGame();
         tennisGame.playerAScores();
-        Assert.assertEquals(tennisGame.getCurrentSocre(),"15 0");
+        Assert.assertEquals(tennisGame.getCurrentScore(),"15 0");
     }
+
+    @Test
+    public void whenSecondPlayerScoresCurrentScoreis0_15(){
+
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerBScores();
+        Assert.assertEquals(tennisGame.getCurrentScore(),"0 15");
+    }
+
 }
