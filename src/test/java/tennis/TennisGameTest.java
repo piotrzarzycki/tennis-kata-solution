@@ -54,4 +54,14 @@ public class TennisGameTest {
         Assert.assertEquals(tennisGame.getCurrentScore(),"0 30");
     }
 
+    @Test
+    public void whenSecondPlayerScoresThreeTimesCurrentScoreIs0_40(){
+
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        Assert.assertEquals(tennisGame.getCurrentScore(),"0 40");
+    }
+
 }
