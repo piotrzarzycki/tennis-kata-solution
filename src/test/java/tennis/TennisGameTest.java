@@ -182,5 +182,15 @@ public class TennisGameTest {
     }
 
 
+    @Test
+    public void whenSecondPlayerWonButFirstHas0Points(){
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        Assert.assertEquals(tennisGame.getCurrentScore(),"- W");
+
+    }
 }
 
