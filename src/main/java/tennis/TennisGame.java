@@ -26,6 +26,7 @@ public class TennisGame {
         diffMap.put(1, Advantage + delimiter + Nothing);
         diffMap.put(-1, Nothing + delimiter + Advantage);
         diffMap.put(2, Won + delimiter + Nothing);
+        diffMap.put(-2, Nothing + delimiter + Won);
     }
 
     public String getCurrentScore(){
