@@ -8,4 +8,8 @@ public class TennisGame {
     public String getCurrentSocre(){
         return "0 0";
     }
+
+    public void playerAScores(){
+
+    }
 }
