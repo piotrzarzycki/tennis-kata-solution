@@ -1,2 +1,6 @@
 .idea/
 tennis-kata-solution.iml
+.gradle/
+gradle/
+gradlew
+gradlew.bat
