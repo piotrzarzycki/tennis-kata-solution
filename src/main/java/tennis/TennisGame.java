@@ -8,8 +8,7 @@ import java.util.HashMap;
 public class TennisGame {
 
     private int playerAScore = 0;
-    private String playerBScore = "0";
-    private static final String value = "15";
+    private int playerBScore = 0;
     private HashMap<Integer,String> pointMap = new HashMap<Integer,String>();
 
     public TennisGame(){
@@ -19,7 +18,7 @@ public class TennisGame {
     }
 
     public String getCurrentScore(){
-        return pointMap.get(playerAScore) + " " + playerBScore;
+        return pointMap.get(playerAScore) + " " + pointMap.get(playerBScore);
     }
 
     public void playerAScores(){
@@ -27,6 +26,6 @@ public class TennisGame {
     }
 
     public void playerBScores(){
-        playerBScore = value;
+        playerBScore += 1;
     }
 }
