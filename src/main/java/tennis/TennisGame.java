@@ -7,16 +7,17 @@ public class TennisGame {
 
     private String playerAScore = "0";
     private String playerBScore = "0";
+    private static final String value = "15";
 
     public String getCurrentScore(){
         return playerAScore + " " + playerBScore;
     }
 
     public void playerAScores(){
-        playerAScore = "15";
+        playerAScore = value;
     }
 
     public void playerBScores(){
-        playerBScore = "15";
+        playerBScore = value;
     }
 }
