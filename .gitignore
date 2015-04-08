@@ -4,3 +4,5 @@ tennis-kata-solution.iml
 gradle/
 gradlew
 gradlew.bat
+build/classes/main/tennis/TennisGame.class
+build/

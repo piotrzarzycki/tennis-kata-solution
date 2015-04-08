@@ -5,10 +5,10 @@ import org.junit.Test;
 public class TennisGameTest {
 
     @Test
-    void whenNoOnePlayerScoresCurentScoreIs00(){
+    public void whenNoOnePlayerScoresCurrentScoreIs00(){
 
-        TennisGame tennisGame = TennisGame();
-        Assert.assertEquals(tennisGame.getCurrentSocre().equals("0 0"));
+        TennisGame tennisGame = new TennisGame();
+        Assert.assertEquals(tennisGame.getCurrentSocre(),"0 0");
 
     }
 }
