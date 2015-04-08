@@ -15,6 +15,7 @@ public class TennisGame {
         pointMap.put(0,"0");
         pointMap.put(1,"15");
         pointMap.put(2,"30");
+        pointMap.put(3,"40");
     }
 
     public String getCurrentScore(){
