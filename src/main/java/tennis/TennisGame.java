@@ -30,8 +30,9 @@ public class TennisGame {
     }
 
 
+
     public String getCurrentScore(){
-        if ( ((playerBScore>=4) || (playerAScore>=4)) && (Math.abs(playerAScore - playerBScore) >= 2)) {
+        if (gameIsFinished()) {
             return diffMap.get((int)(2 * Math.signum(playerAScore - playerBScore)));
         }
         if (playerAScore >=3 && playerBScore >= 3){
@@ -50,6 +51,6 @@ public class TennisGame {
     }
 
     public boolean gameIsFinished(){
-        return true;
+        return  ( ((playerBScore>=4) || (playerAScore>=4)) && (Math.abs(playerAScore - playerBScore) >= 2));
     }
 }
