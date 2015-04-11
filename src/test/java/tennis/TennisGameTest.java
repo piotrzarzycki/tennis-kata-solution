@@ -224,5 +224,17 @@ public class TennisGameTest {
         Assert.assertEquals(tennisGame.gameIsFinished(), true);
 
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void whenGameIsFinishedCallingSoreMethodsIsForbidden() {
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+    }
 }
 
