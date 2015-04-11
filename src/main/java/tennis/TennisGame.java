@@ -47,6 +47,7 @@ public class TennisGame {
     }
 
     public void playerBScores(){
+        if (gameIsFinished()) throw new IllegalStateException("Game Is finished");
         playerBScore += 1;
     }
 
