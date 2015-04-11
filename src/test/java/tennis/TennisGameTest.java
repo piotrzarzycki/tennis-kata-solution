@@ -9,6 +9,7 @@ public class TennisGameTest {
 
         TennisGame tennisGame = new TennisGame();
         Assert.assertEquals(tennisGame.getCurrentScore(), "0 0");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
@@ -17,6 +18,7 @@ public class TennisGameTest {
         TennisGame tennisGame = new TennisGame();
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "15 0");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
@@ -25,6 +27,7 @@ public class TennisGameTest {
         TennisGame tennisGame = new TennisGame();
         tennisGame.playerBScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "0 15");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
@@ -34,6 +37,7 @@ public class TennisGameTest {
         tennisGame.playerBScores();
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "15 15");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
@@ -43,6 +47,7 @@ public class TennisGameTest {
         tennisGame.playerAScores();
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "30 0");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
@@ -52,6 +57,7 @@ public class TennisGameTest {
         tennisGame.playerBScores();
         tennisGame.playerBScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "0 30");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
@@ -62,6 +68,7 @@ public class TennisGameTest {
         tennisGame.playerBScores();
         tennisGame.playerBScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "0 40");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
@@ -75,6 +82,7 @@ public class TennisGameTest {
         tennisGame.playerAScores();
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "deuce");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
@@ -90,6 +98,7 @@ public class TennisGameTest {
         tennisGame.playerAScores();
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "deuce");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
@@ -104,6 +113,7 @@ public class TennisGameTest {
         tennisGame.playerAScores();
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "A -");
+        Assert.assertEquals(tennisGame.gameIsFinished(), false);
     }
 
     @Test
