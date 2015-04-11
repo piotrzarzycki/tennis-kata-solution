@@ -118,6 +118,7 @@ public class TennisGameTest {
         tennisGame.playerBScores();
         Assert.assertEquals(tennisGame.getCurrentScore(),"- A");
 
+
     }
 
     @Test
@@ -132,6 +133,7 @@ public class TennisGameTest {
         tennisGame.playerAScores();
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.getCurrentScore(),"W -");
+        Assert.assertEquals(tennisGame.gameIsFinished(),true);
 
     }
 
@@ -147,6 +149,7 @@ public class TennisGameTest {
         tennisGame.playerBScores();
         tennisGame.playerBScores();
         Assert.assertEquals(tennisGame.getCurrentScore(),"- W");
+        Assert.assertEquals(tennisGame.gameIsFinished(),true);
 
     }
 
@@ -166,6 +169,7 @@ public class TennisGameTest {
         tennisGame.playerBScores();
         tennisGame.playerBScores();
         Assert.assertEquals(tennisGame.getCurrentScore(),"- W");
+        Assert.assertEquals(tennisGame.gameIsFinished(),true);
 
     }
 
@@ -178,6 +182,7 @@ public class TennisGameTest {
         tennisGame.playerAScores();
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.getCurrentScore(),"W -");
+        Assert.assertEquals(tennisGame.gameIsFinished(),true);
 
     }
 
@@ -190,6 +195,7 @@ public class TennisGameTest {
         tennisGame.playerBScores();
         tennisGame.playerBScores();
         Assert.assertEquals(tennisGame.getCurrentScore(),"- W");
+        Assert.assertEquals(tennisGame.gameIsFinished(),true);
 
     }
 

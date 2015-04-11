@@ -29,11 +29,13 @@ public class TennisGame {
         diffMap.put(-2, Nothing + delimiter + Won);
     }
 
+
     public String getCurrentScore(){
         if ( ((playerBScore>=4) || (playerAScore>=4)) && (Math.abs(playerAScore - playerBScore) >= 2)) {
             return diffMap.get((int)(2 * Math.signum(playerAScore - playerBScore)));
         }
         if (playerAScore >=3 && playerBScore >= 3){
+            assert Math.abs(playerAScore-playerBScore) < 2;
             return diffMap.get(playerAScore - playerBScore);
         }
         return pointMap.get(playerAScore) + delimiter + pointMap.get(playerBScore);
