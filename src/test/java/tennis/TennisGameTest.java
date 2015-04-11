@@ -192,5 +192,19 @@ public class TennisGameTest {
         Assert.assertEquals(tennisGame.getCurrentScore(),"- W");
 
     }
+
+
+    @Test
+    public void whenSecondPlayerWonButFirstHas2Points(){
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        Assert.assertEquals(tennisGame.getCurrentScore(),"- W");
+
+    }
 }
 
