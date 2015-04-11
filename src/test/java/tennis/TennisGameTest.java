@@ -90,12 +90,12 @@ public class TennisGameTest {
 
         TennisGame tennisGame = new TennisGame();
         tennisGame.playerBScores();
-        tennisGame.playerBScores();
-        tennisGame.playerBScores();
+        tennisGame.playerAScores();
         tennisGame.playerBScores();
         tennisGame.playerAScores();
+        tennisGame.playerBScores();
         tennisGame.playerAScores();
-        tennisGame.playerAScores();
+        tennisGame.playerBScores();
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.getCurrentScore(), "deuce");
         Assert.assertEquals(tennisGame.gameIsFinished(), false);
@@ -226,7 +226,7 @@ public class TennisGameTest {
     }
 
     @Test(expected = IllegalStateException.class)
-    public void whenGameIsFinishedCallingSoreMethodsIsForbidden() {
+    public void whenGameIsFinishedCallingScoreMethodsIsForbidden() {
         TennisGame tennisGame = new TennisGame();
         tennisGame.playerAScores();
         tennisGame.playerAScores();
@@ -235,6 +235,18 @@ public class TennisGameTest {
         tennisGame.playerBScores();
         tennisGame.playerBScores();
         tennisGame.playerBScores();
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void whenGameIsFinishedCallingScoreMethodsIsForbidden2() {
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerAScores();
+        tennisGame.playerAScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerBScores();
+        tennisGame.playerAScores();
     }
 }
 

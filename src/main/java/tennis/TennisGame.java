@@ -16,6 +16,7 @@ public class TennisGame {
     private final static String Advantage = "A";
     private final static String Won = "W";
     private final static String Nothing = "-";
+    private final static String message = "Game Is finished";
 
     public TennisGame(){
         pointMap.put(0, "0");
@@ -43,11 +44,13 @@ public class TennisGame {
     }
 
     public void playerAScores(){
+
+        if (gameIsFinished()) throw new IllegalStateException(message);
         playerAScore += 1;
     }
 
     public void playerBScores(){
-        if (gameIsFinished()) throw new IllegalStateException("Game Is finished");
+        if (gameIsFinished()) throw new IllegalStateException(message);
         playerBScore += 1;
     }
 
