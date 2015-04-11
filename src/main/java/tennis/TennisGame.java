@@ -46,4 +46,8 @@ public class TennisGame {
     public void playerBScores(){
         playerBScore += 1;
     }
+
+    public boolean gameIsFinished(){
+        return true;
+    }
 }

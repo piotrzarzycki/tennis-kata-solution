@@ -204,6 +204,7 @@ public class TennisGameTest {
         tennisGame.playerBScores();
         tennisGame.playerBScores();
         Assert.assertEquals(tennisGame.getCurrentScore(),"- W");
+        Assert.assertEquals(tennisGame.gameIsFinished(),true);
 
     }
 }
