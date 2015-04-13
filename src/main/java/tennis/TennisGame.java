@@ -17,6 +17,7 @@ public class TennisGame {
     private final static String WON = "W";
     private final static String NOTHING = "-";
     private final static String MESSAGE = "Game Is finished";
+    private final int WINNING_ADVANTAGE  = 2;
 
     public TennisGame(){
         pointMap.put(0, "0");
@@ -26,20 +27,19 @@ public class TennisGame {
         diffMap.put(0, "deuce");
         diffMap.put(1, ADVANTAGE + DELIMITER + NOTHING);
         diffMap.put(-1, NOTHING + DELIMITER + ADVANTAGE);
-        diffMap.put(2, WON + DELIMITER + NOTHING);
-        diffMap.put(-2, NOTHING + DELIMITER + WON);
+        diffMap.put(WINNING_ADVANTAGE , WON + DELIMITER + NOTHING);
+        diffMap.put(-WINNING_ADVANTAGE, NOTHING + DELIMITER + WON);
     }
 
 
 
     public String getCurrentScore(){
+        int  diff = playerAScore - playerBScore;
         if (gameIsFinished()) {
-            int  diff = playerAScore - playerBScore;
-            return diffMap.get((int)(Math.min(2,Math.abs(diff)) * Math.signum(diff)));
+            return diffMap.get((int)(Math.min(WINNING_ADVANTAGE ,Math.abs(diff)) * Math.signum(diff)));
         }
         if (playerAScore >=3 && playerBScore >= 3){
-            assert Math.abs(playerAScore-playerBScore) < 2;
-            return diffMap.get(playerAScore - playerBScore);
+            return diffMap.get(diff);
         }
         return pointMap.get(playerAScore) + DELIMITER + pointMap.get(playerBScore);
     }
@@ -57,6 +57,6 @@ public class TennisGame {
 
     public boolean gameIsFinished(){
         if (playerAScore==Integer.MAX_VALUE) return true;
-        return  ( ((playerBScore>=4) || (playerAScore>=4)) && (Math.abs(playerAScore - playerBScore) >= 2));
+        return  ( ((playerBScore>=4) || (playerAScore>=4)) && (Math.abs(playerAScore - playerBScore) >= WINNING_ADVANTAGE));
     }
 }
