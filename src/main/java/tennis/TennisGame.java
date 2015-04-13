@@ -12,11 +12,11 @@ public class TennisGame {
     private int playerBScore = 0;
     private Map<Integer,String>  diffMap = new HashMap<Integer, String>();
     private Map<Integer, String> pointMap = new HashMap<Integer,String>();
-    private final static String delimiter = " ";
-    private final static String Advantage = "A";
-    private final static String Won = "W";
-    private final static String Nothing = "-";
-    private final static String message = "Game Is finished";
+    private final static String DELIMITER = " ";
+    private final static String ADVANTAGE = "A";
+    private final static String WON = "W";
+    private final static String NOTHING = "-";
+    private final static String MESSAGE = "Game Is finished";
 
     public TennisGame(){
         pointMap.put(0, "0");
@@ -24,37 +24,39 @@ public class TennisGame {
         pointMap.put(2, "30");
         pointMap.put(3, "40");
         diffMap.put(0, "deuce");
-        diffMap.put(1, Advantage + delimiter + Nothing);
-        diffMap.put(-1, Nothing + delimiter + Advantage);
-        diffMap.put(2, Won + delimiter + Nothing);
-        diffMap.put(-2, Nothing + delimiter + Won);
+        diffMap.put(1, ADVANTAGE + DELIMITER + NOTHING);
+        diffMap.put(-1, NOTHING + DELIMITER + ADVANTAGE);
+        diffMap.put(2, WON + DELIMITER + NOTHING);
+        diffMap.put(-2, NOTHING + DELIMITER + WON);
     }
 
 
 
     public String getCurrentScore(){
         if (gameIsFinished()) {
-            return diffMap.get((int)(2 * Math.signum(playerAScore - playerBScore)));
+            int  diff = playerAScore - playerBScore;
+            return diffMap.get((int)(Math.min(2,Math.abs(diff)) * Math.signum(diff)));
         }
         if (playerAScore >=3 && playerBScore >= 3){
             assert Math.abs(playerAScore-playerBScore) < 2;
             return diffMap.get(playerAScore - playerBScore);
         }
-        return pointMap.get(playerAScore) + delimiter + pointMap.get(playerBScore);
+        return pointMap.get(playerAScore) + DELIMITER + pointMap.get(playerBScore);
     }
 
     public void playerAScores(){
 
-        if (gameIsFinished()) throw new IllegalStateException(message);
+        if (gameIsFinished()) throw new IllegalStateException(MESSAGE);
         playerAScore += 1;
     }
 
     public void playerBScores(){
-        if (gameIsFinished()) throw new IllegalStateException(message);
+        if (gameIsFinished()) throw new IllegalStateException(MESSAGE);
         playerBScore += 1;
     }
 
     public boolean gameIsFinished(){
+        if (playerAScore==Integer.MAX_VALUE) return true;
         return  ( ((playerBScore>=4) || (playerAScore>=4)) && (Math.abs(playerAScore - playerBScore) >= 2));
     }
 }

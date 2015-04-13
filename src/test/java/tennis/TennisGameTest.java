@@ -249,7 +249,7 @@ public class TennisGameTest {
         tennisGame.playerAScores();
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test
     public void whenInnerImplementationOfScoreExceedsMAXINTGameShouldFinished() {
         TennisGame tennisGame = new TennisGame();
         for (int i=0;i<Integer.MAX_VALUE-1;i++) {
@@ -257,7 +257,7 @@ public class TennisGameTest {
             tennisGame.playerBScores();
             Assert.assertEquals(tennisGame.gameIsFinished(), false);
         }
-        
+
         tennisGame.playerAScores();
         Assert.assertEquals(tennisGame.gameIsFinished(), true);
         Assert.assertEquals(tennisGame.getCurrentScore(), "A -");
