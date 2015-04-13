@@ -56,7 +56,7 @@ public class TennisGame {
     }
 
     public boolean gameIsFinished(){
-        if (playerAScore==Integer.MAX_VALUE) return true;
+        if (playerAScore==Integer.MAX_VALUE || playerBScore==Integer.MAX_VALUE) return true;
         return  ( ((playerBScore>=4) || (playerAScore>=4)) && (Math.abs(playerAScore - playerBScore) >= WINNING_ADVANTAGE));
     }
 }

@@ -262,5 +262,19 @@ public class TennisGameTest {
         Assert.assertEquals(tennisGame.gameIsFinished(), true);
         Assert.assertEquals(tennisGame.getCurrentScore(), "A -");
     }
+
+    @Test
+    public void whenInnerImplementationOfScoreExceedsMAXINTGameShouldFinished2() {
+        TennisGame tennisGame = new TennisGame();
+        for (int i=0;i<Integer.MAX_VALUE-1;i++) {
+            tennisGame.playerAScores();
+            tennisGame.playerBScores();
+            Assert.assertEquals(tennisGame.gameIsFinished(), false);
+        }
+
+        tennisGame.playerBScores();
+        Assert.assertEquals(tennisGame.gameIsFinished(), true);
+        Assert.assertEquals(tennisGame.getCurrentScore(), "- A");
+    }
 }
 
