@@ -35,7 +35,7 @@ public class TennisGame {
 
     public String getCurrentScore(){
         int  diff = playerAScore - playerBScore;
-        if (gameIsFinished()) {
+        if (isGameFinished()) {
             return diffMap.get((int)(Math.min(WINNING_ADVANTAGE ,Math.abs(diff)) * Math.signum(diff)));
         }
         if (playerAScore >=3 && playerBScore >= 3){
@@ -46,16 +46,16 @@ public class TennisGame {
 
     public void playerAScores(){
 
-        if (gameIsFinished()) throw new IllegalStateException(MESSAGE);
+        if (isGameFinished()) throw new IllegalStateException(MESSAGE);
         playerAScore += 1;
     }
 
     public void playerBScores(){
-        if (gameIsFinished()) throw new IllegalStateException(MESSAGE);
+        if (isGameFinished()) throw new IllegalStateException(MESSAGE);
         playerBScore += 1;
     }
 
-    public boolean gameIsFinished(){
+    public boolean isGameFinished(){
         if (playerAScore==Integer.MAX_VALUE || playerBScore==Integer.MAX_VALUE) return true;
         return  ( ((playerBScore>=4) || (playerAScore>=4)) && (Math.abs(playerAScore - playerBScore) >= WINNING_ADVANTAGE));
     }
